@@ -1,0 +1,61 @@
+include ../utils/mixins
+block variables
+
+doctype html
+|
+|
+html(lang="ru-RU" class="no-js")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+		|
+		| <!-- inject:head:html -->
+		| <!-- endinject -->
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet")
+		<!--[if lt IE 9]>
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+		<![endif]-->
+	body(class=pageClass)
+		.wrapper
+			include ../modules/header/header
+			main.main
+				section.section.section__banner
+					.container
+						.banner
+							img.banner__img(src="../static/img/banner/banner.jpg", alt="")
+
+				section.section.section__ideas
+					.container
+						.ideas
+							.ideas__col.ideas__col-left
+								.ideas__images
+									.ideas__img.ideas__img--1
+										img.ideas__img.ideas__img--1(src="../static/img/idea/idea-1.png", alt="")
+									.ideas__img.ideas__img--2
+										img.ideas__img.ideas__img--2(src="../static/img/idea/idea-2.png", alt="")
+
+							.ideas__col.ideas__col-right
+								.ideas__info
+									h3.ideas__info-title Делимся идеями
+									p.ideas__info-text Дарить подарки также приятно, как получать! Мы знаем, чем порадовать любимых женщин 8‑го марта
+
+
+				section.section.section__fashion
+
+
+				section.section.section__coquette
+
+
+				section.section.section__banner-b
+				block content
+			include ../modules/footer/footer
+		script(src="static/js/jquery-3.3.1.min.js")
+		script(src="static/js/libs.min.js")
+		script(src="static/js/main.js")
+		block script
